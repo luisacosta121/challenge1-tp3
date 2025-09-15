@@ -13,10 +13,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.welcomescreen.R
+import com.example.welcomescreen.ui.theme.poppinsFamily
 
 @Composable
-fun Welcome(modifier: Modifier = Modifier) {
+fun Welcome(modifier: Modifier = Modifier, navController: NavController) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -28,14 +30,16 @@ fun Welcome(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
+
         Text(
             text = "Discover Your\n" + "Dream Job here",
             color = Color(0xFF1F41BB),
             fontSize = 32.sp,
-            fontWeight = FontWeight.SemiBold,
+            fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             lineHeight = 40.sp,
-            modifier = Modifier.padding(horizontal = 16.dp)
+            modifier = Modifier.padding(horizontal = 16.dp),
+            fontFamily = poppinsFamily
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -53,7 +57,7 @@ fun Welcome(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Button(
-                onClick = { },
+                onClick = { navController.navigate(route = "login") },
                 modifier = Modifier
                     .width(150.dp)
                     .height(60.dp),
@@ -69,7 +73,7 @@ fun Welcome(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.width(16.dp))
 
             TextButton(
-                onClick = { },
+                onClick = { navController.navigate(route = "register") },
                 modifier = Modifier
                     .width(150.dp)
                     .height(60.dp),

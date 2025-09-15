@@ -21,10 +21,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.welcomescreen.R
 
 @Composable
-fun Register(modifier: Modifier = Modifier) {
+fun Register(modifier: Modifier = Modifier, navController: NavController) {
     Column(
         modifier = modifier, // Hace que la columna ocupe toda la pantalla
         verticalArrangement = Arrangement.Center, // Centra verticalmente
